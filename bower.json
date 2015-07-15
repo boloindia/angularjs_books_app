@@ -1,0 +1,34 @@
+{
+  "name": "AngularJS Books App",
+  "version": "1.0.0",
+  "authors": [
+    "Gaurav Madaan <Gaurav.Madaan@technossus.com>"
+  ],
+  "description": "This is a basic Angular JS applications for fetching Ebooks from https://it-ebooks.info",
+  "main": "index.html",
+  "keywords": [
+    "angularjs",
+    "books",
+    "app",
+    "ebooks",
+    "download",
+    "it-ebooks"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-mocks": "~1.2.x",
+    "angular-resource": "~1.2.x",
+    "angular-animate": "~1.2.x",
+    "angular-route": "~1.2.x",
+    "bootstrap": "~3.1.1",
+    "jquery": "~2.1.4",
+    "angular": "~1.4.3"
+  }
+}

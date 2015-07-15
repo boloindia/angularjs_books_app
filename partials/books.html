@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">    
+      <!--Sidebar content-->
+      <div class="row well">
+          <h1>Welcome to Technossus Book Search Application</h1>
+      </div>  
+      <div>
+          <p>
+              This site allows you search for IT-Ebooks and download them absolutely free of cost.
+              The site is under construction but can still serve you.              
+          </p>
+          <p>
+              <strong><i>Currently, we are able to serve only 700 requests per day, so donot make unnecessary requests.</i></strong>
+          </p>
+      </div>
+      <div class="row">
+          <input class="input-sm span12 " style="width:60%;" type="text" ng-model="searchText" />          
+          <input type="button" class="btn btn-primary" value="Search" ng-click="searchEbook()"/>
+      </div>
+    <div class="row">
+        
+        <div class="alert-info" ng-show="progressFlag">
+            <h4>Please wait, we are going as fast as we can...</h4>
+        </div>
+        <div class="alert-success" ng-show="successFlag">
+            <h4>Time Taken: {{metaInfo.timeTaken}} | Number of Books: {{metaInfo.resultCount}}</h4>
+        </div>
+        <div class="row" ng-show="successFlag">
+               <table class="table table-responsive table-bordered span12">
+                   <thead>
+                       <tr>
+                           <th>
+                               Image
+                           </th>
+                           <th>
+                               Title
+                           </th>
+                           <th>
+                               Description
+                           </th>
+                           <th>
+                               ISBN
+                           </th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr ng-repeat="book in books">
+                           <td>
+                               <img src="{{book.Image}}" title="{{book.Title}}" />
+                           </td>
+                           <td>
+                               {{book.Title}}
+                           <br />
+                               <a href="javascript:void(0);" ng-click="getDownloadLink(book.ID)">Get Download Link</a>
+                               <a href="{{downloadLink}}" target="_blank">{{downloadLink}}</a>                            
+                           <td>
+                               <p>{{book.SubTitle}}</p>
+                               <p>{{book.Description}}</p>
+                               
+                           </td>
+                           <td>
+                               {{book.isbn}}
+                           </td>
+                       </tr>
+                   </tbody>
+               </table>
+        </div>
+        
+      <!--Body content-->
+        <!--<div ng-repeat="book in books">
+            
+        </div>-->
+      <!--<ul class="phones">
+        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp"
+            class="thumbnail phone-listing">
+          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>-->
+
+    </div>
+  </div>
+</div>
